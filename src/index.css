@@ -1,0 +1,1262 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  font-family: "Inter", sans-serif;
+  color: #f4f2fa;
+  background: #050609;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font: inherit;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #050609;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.portfolio {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  background:
+          radial-gradient(
+                  ellipse 42% 65% at 34% 18%,
+                  rgba(101, 57, 202, 0.28),
+                  transparent 65%
+          ),
+          radial-gradient(
+                  ellipse 38% 65% at 59% 17%,
+                  rgba(0, 202, 235, 0.19),
+                  transparent 65%
+          ),
+          linear-gradient(
+                  180deg,
+                  #101229 0%,
+                  #090a12 57%,
+                  #050609 100%
+          );
+}
+
+/* =========================================
+   BACKGROUND GRID
+========================================= */
+
+.grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.42;
+
+  background-image:
+          linear-gradient(
+                  rgba(153, 159, 190, 0.18) 1px,
+                  transparent 1px
+          ),
+          linear-gradient(
+                  90deg,
+                  rgba(153, 159, 190, 0.18) 1px,
+                  transparent 1px
+          );
+
+  background-size: 205px 124px;
+  background-position: center center;
+}
+
+/* Slightly darker lower grid */
+
+.grid::after {
+  content: "";
+  position: absolute;
+  inset: 50% 0 0;
+
+  background:
+          linear-gradient(
+                  to bottom,
+                  transparent,
+                  rgba(0, 0, 0, 0.22)
+          );
+}
+
+/* =========================================
+   AMBIENT GLOWS
+========================================= */
+
+.glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(75px);
+}
+
+.glow-purple {
+  width: 480px;
+  height: 480px;
+  left: 18%;
+  top: -180px;
+  background: rgba(110, 65, 255, 0.22);
+}
+
+.glow-cyan {
+  width: 450px;
+  height: 500px;
+  left: 50%;
+  top: -160px;
+  background: rgba(0, 210, 230, 0.17);
+}
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.top-bar {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 59px;
+
+  border-bottom: 1px solid rgba(160, 167, 195, 0.16);
+
+  color: rgba(165, 169, 194, 0.48);
+  font-family: "Space Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.system-status {
+  position: absolute;
+  left: 28px;
+  top: 30px;
+}
+
+.status-square {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 7px;
+
+  background: #00e7ff;
+  box-shadow: 0 0 8px rgba(0, 231, 255, 0.6);
+}
+
+.build-info {
+  position: absolute;
+  left: 28px;
+  top: 48px;
+  font-size: 8px;
+  opacity: 0.75;
+}
+
+.preview-info {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+  text-align: right;
+  line-height: 15px;
+}
+
+/* =========================================
+   SIDE RAILS
+========================================= */
+
+.side-rail {
+  position: absolute;
+  z-index: 5;
+  top: 59px;
+  bottom: 59px;
+
+  width: 59px;
+
+  border-right: 1px solid rgba(150, 156, 183, 0.13);
+
+  color: rgba(156, 161, 187, 0.37);
+
+  font-family: "Space Mono", monospace;
+  font-size: 8px;
+  letter-spacing: 0.07em;
+}
+
+.right-rail {
+  right: 0;
+  border-right: none;
+  border-left: 1px solid rgba(150, 156, 183, 0.13);
+}
+
+.vertical-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 390px;
+
+  display: flex;
+  justify-content: space-between;
+
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.left-rail .vertical-text span:first-child {
+  color: #00dfff;
+}
+
+.right-rail .vertical-text span:first-child {
+  color: #9865ff;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: absolute;
+  z-index: 5;
+
+  left: 50%;
+  top: 51%;
+
+  width: min(850px, 90vw);
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+/* =========================================
+   HERO SYMBOL
+========================================= */
+
+.hero-symbol {
+  margin-bottom: 39px;
+}
+
+.symbol-outer {
+  width: 59px;
+  height: 59px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(154, 91, 255, 0.9);
+
+  box-shadow:
+          inset 0 0 18px rgba(122, 73, 255, 0.08),
+          0 0 20px rgba(112, 57, 255, 0.05);
+}
+/* =========================================
+   ANIMATED OUTER ICON
+========================================= */
+
+.symbol-outer,
+.popup-symbol {
+  animation: outerIconMotion 3s ease-in-out infinite;
+}
+
+@keyframes outerIconMotion {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(-3deg) scale(1.04);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  75% {
+    transform: rotate(3deg) scale(1.04);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.symbol-inner {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #00e9ff;
+}
+
+.symbol-inner span {
+  width: 7px;
+  height: 7px;
+
+  background: #f4f1ff;
+
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.6);
+}
+.symbol-inner {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #00e9ff;
+}
+
+.symbol-inner span {
+  width: 7px;
+  height: 7px;
+
+  background: #f4f1ff;
+
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.6);
+}
+
+.symbol-inner {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #00e9ff;
+}
+
+.symbol-inner span {
+  width: 7px;
+  height: 7px;
+
+  background: #f4f1ff;
+
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================
+   ANIMATED INNER ICON
+========================================= */
+
+.symbol-inner,
+.popup-symbol-inner {
+  animation: innerIconMotion 3s ease-in-out infinite;
+}
+
+@keyframes innerIconMotion {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(-3deg) scale(1.04);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  75% {
+    transform: rotate(3deg) scale(1.04);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+/* =========================================
+   TEXT
+========================================= */
+
+.eyebrow {
+  margin: 0 0 22px;
+
+  color: #00ddf6;
+
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+
+  color: #f7f5fb;
+
+  font-size: clamp(52px, 5vw, 69px);
+  font-weight: 900;
+
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+
+  text-shadow:
+          0 0 22px rgba(255, 255, 255, 0.05);
+}
+
+.skills {
+  margin: 22px 0 40px;
+
+  color: rgba(186, 188, 204, 0.58);
+
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+
+  letter-spacing: 0.05em;
+}
+
+.skills span {
+  color: rgba(187, 190, 208, 0.3);
+  margin: 0 5px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+  display: flex;
+  gap: 22px;
+}
+
+.btn {
+  height: 55px;
+  min-width: 182px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  border: 2px solid;
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 0.02em;
+
+  transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: white;
+
+  border-color: #e9e1ff;
+
+  background: #8c54ed;
+
+  box-shadow:
+          0 0 0 1px rgba(144, 83, 245, 0.35),
+          0 8px 25px rgba(110, 50, 240, 0.15);
+}
+
+.btn-primary:hover {
+  background: #9861f5;
+  box-shadow:
+          0 0 25px rgba(137, 77, 255, 0.3);
+}
+
+.btn-secondary {
+  color: #b8b5c9;
+
+  border-color: #00e7f4;
+
+  background: rgba(4, 8, 15, 0.55);
+}
+
+.btn-secondary:hover {
+  color: #ffffff;
+  background: rgba(0, 215, 235, 0.06);
+
+  box-shadow:
+          0 0 20px rgba(0, 224, 245, 0.12);
+}
+
+.arrow {
+  font-size: 25px;
+  line-height: 0;
+  font-weight: 400;
+}
+
+.gallery-icon {
+  color: #00eaff;
+  font-size: 17px;
+}
+
+/* =========================================
+   BOTTOM AREA
+========================================= */
+
+.bottom-section {
+  position: absolute;
+  z-index: 10;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 94px;
+
+  border-top: 1px solid rgba(160, 167, 195, 0.16);
+}
+
+.social-nav {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  gap: 47px;
+
+  transform: translateX(-50%);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #bbb9ca;
+
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+
+  transition:
+          color 160ms ease,
+          transform 160ms ease;
+}
+
+.social-link:hover {
+  color: #00e5f5;
+  transform: translateY(-1px);
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 19px;
+
+  font-family: Arial, sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+}
+
+.github {
+  font-size: 13px;
+}
+
+.linkedin {
+  font-size: 16px;
+}
+
+.twitter {
+  font-size: 14px;
+  transform: rotate(-25deg);
+}
+
+.contact {
+  color: #00e5f5;
+  font-size: 20px;
+}
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.contact-button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  width: auto;
+  height: auto;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent !important;
+  background-color: transparent !important;
+
+  color: #bbb9ca;
+
+  font-family: "Space Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+          color 160ms ease,
+          transform 160ms ease;
+}
+
+.contact-button:hover {
+  color: #00e5f5;
+  transform: translateY(-1px);
+}
+
+.contact-button .contact {
+  color: #00e5f5;
+}
+
+/* =========================================
+   FOOTER META
+========================================= */
+
+.footer-meta {
+  position: absolute;
+
+  left: 58px;
+  right: 58px;
+  bottom: 11px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: rgba(153, 158, 181, 0.45);
+
+  font-family: "Space Mono", monospace;
+  font-size: 8px;
+}
+
+.server-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.server-status i {
+  width: 6px;
+  height: 6px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+
+  background: #00d99a;
+  box-shadow: 0 0 7px rgba(0, 217, 154, 0.5);
+}
+
+
+/* =====================================================
+   CONTACT POPUP
+   50% LARGER VERSION
+===================================================== */
+
+.contact-overlay {
+  position: fixed;
+  z-index: 99999;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+
+  background: rgba(2, 3, 10, 0.68);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  animation: contactOverlayIn 180ms ease-out;
+}
+
+@keyframes contactOverlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   POPUP WINDOW
+===================================================== */
+
+.contact-popup {
+  position: relative;
+
+  z-index: 100000;
+
+  width: 645px;
+  max-width: calc(100vw - 60px);
+
+  padding: 57px 57px 51px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(0, 225, 245, 0.60);
+
+  background:
+          radial-gradient(
+                  ellipse 80% 70% at 20% 0%,
+                  rgba(101, 57, 202, 0.30),
+                  transparent 70%
+          ),
+          radial-gradient(
+                  ellipse 75% 70% at 80% 0%,
+                  rgba(0, 202, 235, 0.18),
+                  transparent 70%
+          ),
+          linear-gradient(
+                  180deg,
+                  #101229 0%,
+                  #090a12 57%,
+                  #050609 100%
+          );
+
+  box-shadow:
+          0 0 0 1px rgba(130, 70, 230, 0.15),
+          0 0 52px rgba(0, 220, 245, 0.12),
+          0 45px 120px rgba(0, 0, 0, 0.70);
+
+  color: #f4f2fa;
+
+  font-family: "Space Mono", monospace;
+
+  text-align: center;
+
+  animation: contactPopupIn 220ms ease-out;
+}
+
+@keyframes contactPopupIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+/* =====================================================
+   POPUP INTERNAL GRID
+===================================================== */
+
+.contact-popup::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.18;
+
+  background-image:
+          linear-gradient(
+                  rgba(153, 159, 190, 0.13) 1px,
+                  transparent 1px
+          ),
+          linear-gradient(
+                  90deg,
+                  rgba(153, 159, 190, 0.13) 1px,
+                  transparent 1px
+          );
+
+  background-size: 105px 82px;
+}
+
+
+/* =====================================================
+   POPUP CORNER DETAILS
+===================================================== */
+
+.contact-popup::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 3;
+
+  top: -1px;
+  left: -1px;
+
+  width: 36px;
+  height: 36px;
+
+  border-top: 3px solid #9b5cff;
+  border-left: 3px solid #9b5cff;
+}
+
+
+/* Bottom-right corner */
+
+.popup-email-button::after {
+  content: "";
+
+  position: absolute;
+
+  right: -1px;
+  bottom: -1px;
+
+  width: 30px;
+  height: 30px;
+
+  border-right: 3px solid #00e7f4;
+  border-bottom: 3px solid #00e7f4;
+}
+
+
+/* Keep popup contents above the grid */
+
+.contact-popup > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.popup-close {
+  position: absolute !important;
+
+  top: 12px !important;
+  right: 15px !important;
+
+  z-index: 5 !important;
+
+  width: 42px !important;
+  height: 42px !important;
+
+  padding: 0 !important;
+
+  border: 0 !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+
+  color: rgba(190, 194, 210, 0.55) !important;
+
+  font-family: Arial, sans-serif !important;
+  font-size: 33px !important;
+  font-weight: 300 !important;
+
+  cursor: pointer;
+}
+
+.popup-close:hover {
+  color: #ffffff !important;
+}
+
+
+/* =====================================================
+   POPUP SYMBOL
+===================================================== */
+
+.popup-symbol {
+  width: 89px;
+  height: 89px;
+
+  margin: 0 auto 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(154, 91, 255, 0.9);
+
+  box-shadow:
+          inset 0 0 27px rgba(122, 73, 255, 0.08),
+          0 0 30px rgba(112, 57, 255, 0.08);
+}
+
+.popup-symbol-inner {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #00e9ff;
+}
+
+.popup-symbol-inner span {
+  width: 11px;
+  height: 11px;
+
+  background: #f4f1ff;
+
+  box-shadow:
+          0 0 14px rgba(255, 255, 255, 0.6);
+}
+
+
+/* =====================================================
+   POPUP TEXT
+===================================================== */
+
+.popup-eyebrow {
+  margin: 0 0 20px;
+
+  color: #00ddf6;
+
+  font-family: "Space Mono", monospace;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+}
+
+.contact-popup h2 {
+  margin: 0 0 23px;
+
+  color: #f7f5fb;
+
+  font-family: "Inter", sans-serif;
+  font-size: 40px;
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+.popup-description {
+  max-width: 480px;
+
+  margin: 0 auto 38px;
+
+  color: rgba(186, 188, 204, 0.65);
+
+  font-family: "Space Mono", monospace;
+  font-size: 13.5px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   EMAIL BOX
+===================================================== */
+
+.email-copy {
+  width: 100%;
+  height: 66px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba(150, 157, 185, 0.32);
+
+  background: rgba(0, 0, 0, 0.42);
+
+  text-align: left;
+}
+
+.email-copy span {
+  flex: 1;
+
+  min-width: 0;
+
+  padding-left: 20px;
+
+  overflow: hidden;
+
+  color: #d9d7e5;
+
+  font-family: "Space Mono", monospace;
+  font-size: 13.5px;
+
+  white-space: nowrap;
+}
+
+.email-copy button {
+  appearance: none;
+  -webkit-appearance: none;
+
+  flex-shrink: 0;
+
+  height: 66px;
+
+  padding: 0 25px;
+
+  border: 0;
+
+  background: #8c54ed !important;
+  background-color: #8c54ed !important;
+
+  color: #ffffff;
+
+  font-family: "Space Mono", monospace;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+          background 160ms ease,
+          box-shadow 160ms ease;
+}
+
+.email-copy button:hover {
+  background: #9c63f4 !important;
+
+  box-shadow:
+          0 0 27px rgba(137, 77, 255, 0.30);
+}
+
+
+/* =====================================================
+   OPEN EMAIL BUTTON
+===================================================== */
+
+.popup-email-button {
+  position: relative;
+
+  width: 100%;
+  height: 66px;
+
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  border: 1px solid #00e7f4;
+
+  background: rgba(0, 215, 235, 0.035);
+
+  color: #b8f8ff;
+
+  text-decoration: none;
+
+  font-family: "Space Mono", monospace;
+  font-size: 13.5px;
+  font-weight: 700;
+
+  transition:
+          background 160ms ease,
+          color 160ms ease,
+          box-shadow 160ms ease;
+}
+
+.popup-email-button span {
+  font-size: 29px;
+  line-height: 0;
+}
+
+.popup-email-button:hover {
+  color: #ffffff;
+
+  background: rgba(0, 215, 235, 0.08);
+
+  box-shadow:
+          0 0 30px rgba(0, 224, 245, 0.15);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .side-rail {
+    display: none;
+  }
+
+  .grid {
+    background-size: 150px 100px;
+  }
+
+  .hero h1 {
+    font-size: clamp(43px, 9vw, 65px);
+  }
+
+  .social-nav {
+    gap: 22px;
+  }
+
+  .social-link {
+    font-size: 12px;
+  }
+
+  .footer-meta {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio {
+    min-height: 600px;
+  }
+
+  .preview-info,
+  .build-info {
+    display: none;
+  }
+
+  .system-status {
+    top: 25px;
+  }
+
+  .hero {
+    top: 48%;
+  }
+
+  .hero-symbol {
+    margin-bottom: 28px;
+  }
+
+  .eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.27em;
+    margin-bottom: 17px;
+  }
+
+  .hero h1 {
+    font-size: 12vw;
+  }
+
+  .skills {
+    max-width: 90vw;
+    margin: 18px 0 30px;
+    line-height: 2;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 230px;
+  }
+
+  .bottom-section {
+    height: 110px;
+  }
+
+  .social-nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    padding: 0 15px;
+  }
+
+  .social-link {
+    font-size: 10px;
+  }
+
+  .footer-meta {
+    font-size: 6px;
+  }
+
+  .footer-meta > span:first-child {
+    max-width: 180px;
+  }
+
+  /* Mobile popup sizing */
+
+  .contact-overlay {
+    padding: 15px;
+  }
+
+  .contact-popup {
+    width: 350px;
+    max-width: calc(100vw - 30px);
+
+    padding: 30px 24px 25px;
+  }
+
+  .contact-popup h2 {
+    font-size: 22px;
+  }
+
+  .popup-description {
+    font-size: 8px;
+  }
+
+  .email-copy span {
+    font-size: 7px;
+  }
+}
