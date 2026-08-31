@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+
+    font-family: "Inter", sans-serif;
+
+    color: #f4f2fa;
+    background: #050609;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+
+    /* THEME VARIABLES */
+    --accent: #00e7f4;
+    --accent-bg: rgba(0, 231, 244, 0.08);
+    --accent-border: rgba(0, 231, 244, 0.5);
+
+    --border: rgba(160, 167, 195, 0.16);
+
+    --text-h: #f7f5fb;
+
+    --social-bg: rgba(255, 255, 255, 0.05);
+
+    --shadow: 0 0 25px rgba(0, 224, 245, 0.12);
+}
+
+    /* NAVBAR */
+.navbar {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    min-height: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #0A0A0C;
+
+    padding: 24px clamp(20px, 4vw, 64px);
+
+    display: flex;
+    align-items: center;}
+
+.navbar-title {
+    position: static;
+    flex-shrink: 0;}
+.navbar-text {
+    font-size: 35px;
+    font-weight: 800;
+    white-space: nowrap;}
+
+.navbar-tabs {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: auto;}
+.navbar-tabs-home {
+    color: #8E8E9F;}
+.navbar-tabs-gallery{
+    color: #8E8E9F;}
+.navbar-tabs-about {
+    color: #8E8E9F;}
+.navbar-tabs-socials{
+    color: #8E8E9F;
+    white-space: nowrap;}
+
+.navbar-contact {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-contact-available-icon{}
+.navbar-contact-available-text{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    font-size: 8px;
+}
+
+.btn {
+    height: 55px;
+    min-width: 182px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 2px solid;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    transition:
+            transform 180ms ease,
+            box-shadow 180ms ease,
+            background 180ms ease;}
+.btn:hover {
+    transform: scale(1.1);}
+
+.btn-contact {
+    color: white;
+    border-color: #333346;
+    background: #0A0A0C;
+    box-shadow:
+            0 0 0 1px rgba(144, 83, 245, 0.35),
+            0 8px 25px rgba(110, 50, 240, 0.15);}
+.btn-contact:hover {
+    background: #32323c;
+    box-shadow:
+            0 0 25px rgba(137, 77, 255, 0.3);}

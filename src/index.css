@@ -2,18 +2,28 @@
 
 :root {
   font-family: "Inter", sans-serif;
+
   color: #f4f2fa;
   background: #050609;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+
+  --accent: #00e7f4;
+  --accent-bg: rgba(0, 231, 244, 0.08);
+  --accent-border: rgba(0, 231, 244, 0.5);
+
+  --border: rgba(160, 167, 195, 0.16);
+
+  --text-h: #f7f5fb;
+
+  --social-bg: rgba(255, 255, 255, 0.05);
+
+  --shadow: 0 0 25px rgba(0, 224, 245, 0.12);
 }
 
 * {
   box-sizing: border-box;
-}
-
-button {
-  font: inherit;
 }
 
 html,
@@ -38,9 +48,9 @@ button {
   cursor: pointer;
 }
 
-/* =========================================
+/* =====================================================
    MAIN CONTAINER
-========================================= */
+   ===================================================== */
 
 .portfolio {
   position: relative;
@@ -48,6 +58,7 @@ button {
   height: 100vh;
   min-height: 650px;
   overflow: hidden;
+
   background:
           radial-gradient(
                   ellipse 42% 65% at 34% 18%,
@@ -67,14 +78,16 @@ button {
           );
 }
 
-/* =========================================
+/* =====================================================
    BACKGROUND GRID
-========================================= */
+   ===================================================== */
 
 .grid {
   position: absolute;
   inset: 0;
+
   pointer-events: none;
+
   opacity: 0.42;
 
   background-image:
@@ -92,10 +105,9 @@ button {
   background-position: center center;
 }
 
-/* Slightly darker lower grid */
-
 .grid::after {
   content: "";
+
   position: absolute;
   inset: 50% 0 0;
 
@@ -107,40 +119,49 @@ button {
           );
 }
 
-/* =========================================
+/* =====================================================
    AMBIENT GLOWS
-========================================= */
+   ===================================================== */
 
 .glow {
   position: absolute;
+
   pointer-events: none;
+
   border-radius: 50%;
+
   filter: blur(75px);
 }
 
 .glow-purple {
   width: 480px;
   height: 480px;
+
   left: 18%;
   top: -180px;
+
   background: rgba(110, 65, 255, 0.22);
 }
 
 .glow-cyan {
   width: 450px;
   height: 500px;
+
   left: 50%;
   top: -160px;
+
   background: rgba(0, 210, 230, 0.17);
 }
 
-/* =========================================
+/* =====================================================
    TOP BAR
-========================================= */
+   ===================================================== */
 
 .top-bar {
   position: absolute;
+
   z-index: 10;
+
   top: 0;
   left: 0;
   right: 0;
@@ -150,53 +171,67 @@ button {
   border-bottom: 1px solid rgba(160, 167, 195, 0.16);
 
   color: rgba(165, 169, 194, 0.48);
+
   font-family: "Space Mono", monospace;
-  font-size: 9px;
+  font-size: 14px;
+
   letter-spacing: 0.08em;
 }
 
 .system-status {
   position: absolute;
+
   left: 28px;
   top: 30px;
 }
 
 .status-square {
   display: inline-block;
+
   width: 7px;
   height: 7px;
+
   margin-right: 7px;
 
   background: #00e7ff;
-  box-shadow: 0 0 8px rgba(0, 231, 255, 0.6);
+
+  box-shadow:
+          0 0 8px rgba(0, 231, 255, 0.6);
 }
 
 .build-info {
   position: absolute;
+
   left: 28px;
   top: 48px;
+
   font-size: 8px;
+
   opacity: 0.75;
 }
 
 .preview-info {
   position: absolute;
+
   right: 30px;
   top: 30px;
 
   text-align: right;
+
   line-height: 15px;
 }
 
-/* =========================================
+/* =====================================================
    SIDE RAILS
-========================================= */
+   ===================================================== */
 
 .side-rail {
   position: absolute;
+
   z-index: 5;
-  top: 59px;
-  bottom: 59px;
+
+  top: 80px;
+  bottom: 80px;
 
   width: 59px;
 
@@ -205,27 +240,33 @@ button {
   color: rgba(156, 161, 187, 0.37);
 
   font-family: "Space Mono", monospace;
-  font-size: 8px;
+  font-size: 14px;
+
   letter-spacing: 0.07em;
 }
 
 .right-rail {
   right: 0;
+
   border-right: none;
   border-left: 1px solid rgba(150, 156, 183, 0.13);
 }
 
 .vertical-text {
   position: absolute;
+
   top: 50%;
   left: 50%;
 
-  width: 390px;
+  width: 500px;
 
   display: flex;
+
   justify-content: space-between;
 
-  transform: translate(-50%, -50%) rotate(-90deg);
+  transform:
+          translate(-50%, -50%)
+          rotate(-90deg);
 }
 
 .left-rail .vertical-text span:first-child {
@@ -236,12 +277,13 @@ button {
   color: #9865ff;
 }
 
-/* =========================================
+/* =====================================================
    HERO
-========================================= */
+   ===================================================== */
 
 .hero {
   position: absolute;
+
   z-index: 5;
 
   left: 50%;
@@ -249,18 +291,21 @@ button {
 
   width: min(850px, 90vw);
 
-  transform: translate(-50%, -50%);
+  transform:
+          translate(-50%, -50%);
 
   display: flex;
+
   align-items: center;
+
   flex-direction: column;
 
   text-align: center;
 }
 
-/* =========================================
+/* =====================================================
    HERO SYMBOL
-========================================= */
+   ===================================================== */
 
 .hero-symbol {
   margin-bottom: 39px;
@@ -271,6 +316,7 @@ button {
   height: 59px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -280,13 +326,14 @@ button {
           inset 0 0 18px rgba(122, 73, 255, 0.08),
           0 0 20px rgba(112, 57, 255, 0.05);
 }
-/* =========================================
-   ANIMATED OUTER ICON
-========================================= */
 
 .symbol-outer,
 .popup-symbol {
-  animation: outerIconMotion 3s ease-in-out infinite;
+  animation:
+          outerIconMotion
+          3s
+          ease-in-out
+          infinite;
 }
 
 @keyframes outerIconMotion {
@@ -318,6 +365,7 @@ button {
   height: 30px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -330,59 +378,17 @@ button {
 
   background: #f4f1ff;
 
-  box-shadow: 0 0 9px rgba(255, 255, 255, 0.6);
+  box-shadow:
+          0 0 9px rgba(255, 255, 255, 0.6);
 }
-.symbol-inner {
-  position: relative;
-
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid #00e9ff;
-}
-
-.symbol-inner span {
-  width: 7px;
-  height: 7px;
-
-  background: #f4f1ff;
-
-  box-shadow: 0 0 9px rgba(255, 255, 255, 0.6);
-}
-
-.symbol-inner {
-  position: relative;
-
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: 2px solid #00e9ff;
-}
-
-.symbol-inner span {
-  width: 7px;
-  height: 7px;
-
-  background: #f4f1ff;
-
-  box-shadow: 0 0 9px rgba(255, 255, 255, 0.6);
-}
-
-/* =========================================
-   ANIMATED INNER ICON
-========================================= */
 
 .symbol-inner,
 .popup-symbol-inner {
-  animation: innerIconMotion 3s ease-in-out infinite;
+  animation:
+          innerIconMotion
+          3s
+          ease-in-out
+          infinite;
 }
 
 @keyframes innerIconMotion {
@@ -406,9 +412,10 @@ button {
     transform: rotate(0deg) scale(1);
   }
 }
-/* =========================================
+
+/* =====================================================
    TEXT
-========================================= */
+   ===================================================== */
 
 .eyebrow {
   margin: 0 0 22px;
@@ -416,10 +423,12 @@ button {
   color: #00ddf6;
 
   font-family: "Space Mono", monospace;
+
   font-size: 11px;
   font-weight: 700;
 
   letter-spacing: 0.42em;
+
   text-transform: uppercase;
 }
 
@@ -429,9 +438,11 @@ button {
   color: #f7f5fb;
 
   font-size: clamp(52px, 5vw, 69px);
+
   font-weight: 900;
 
   line-height: 0.95;
+
   letter-spacing: -0.055em;
 
   text-shadow:
@@ -444,6 +455,7 @@ button {
   color: rgba(186, 188, 204, 0.58);
 
   font-family: "Space Mono", monospace;
+
   font-size: 10px;
 
   letter-spacing: 0.05em;
@@ -451,30 +463,36 @@ button {
 
 .skills span {
   color: rgba(187, 190, 208, 0.3);
+
   margin: 0 5px;
 }
 
-/* =========================================
+/* =====================================================
    BUTTONS
-========================================= */
+   ===================================================== */
 
 .hero-actions {
   display: flex;
+
   gap: 22px;
 }
 
 .btn {
   height: 55px;
+
   min-width: 182px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 12px;
 
   border: 2px solid;
 
   font-family: "Inter", sans-serif;
+
   font-size: 14px;
   font-weight: 800;
 
@@ -504,6 +522,7 @@ button {
 
 .btn-primary:hover {
   background: #9861f5;
+
   box-shadow:
           0 0 25px rgba(137, 77, 255, 0.3);
 }
@@ -518,6 +537,7 @@ button {
 
 .btn-secondary:hover {
   color: #ffffff;
+
   background: rgba(0, 215, 235, 0.06);
 
   box-shadow:
@@ -526,21 +546,25 @@ button {
 
 .arrow {
   font-size: 25px;
+
   line-height: 0;
+
   font-weight: 400;
 }
 
 .gallery-icon {
   color: #00eaff;
+
   font-size: 17px;
 }
 
-/* =========================================
+/* =====================================================
    BOTTOM AREA
-========================================= */
+   ===================================================== */
 
 .bottom-section {
   position: absolute;
+
   z-index: 10;
 
   left: 0;
@@ -561,7 +585,9 @@ button {
   height: 35px;
 
   display: flex;
+
   align-items: center;
+
   gap: 47px;
 
   transform: translateX(-50%);
@@ -569,7 +595,9 @@ button {
 
 .social-link {
   display: flex;
+
   align-items: center;
+
   gap: 11px;
 
   color: #bbb9ca;
@@ -577,6 +605,7 @@ button {
   text-decoration: none;
 
   font-family: "Space Mono", monospace;
+
   font-size: 15px;
   font-weight: 700;
 
@@ -587,18 +616,22 @@ button {
 
 .social-link:hover {
   color: #00e5f5;
+
   transform: translateY(-1px);
 }
 
 .social-icon {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   width: 19px;
 
   font-family: Arial, sans-serif;
+
   font-weight: 800;
+
   font-size: 17px;
 }
 
@@ -612,24 +645,28 @@ button {
 
 .twitter {
   font-size: 14px;
+
   transform: rotate(-25deg);
 }
 
 .contact {
   color: #00e5f5;
+
   font-size: 20px;
 }
 
-/* =========================================
+/* =====================================================
    CONTACT BUTTON
-========================================= */
+   ===================================================== */
 
 .contact-button {
   appearance: none;
   -webkit-appearance: none;
 
   display: flex;
+
   align-items: center;
+
   gap: 11px;
 
   width: auto;
@@ -642,11 +679,11 @@ button {
   outline: 0;
 
   background: transparent !important;
-  background-color: transparent !important;
 
   color: #bbb9ca;
 
   font-family: "Space Mono", monospace;
+
   font-size: 15px;
   font-weight: 700;
 
@@ -659,6 +696,7 @@ button {
 
 .contact-button:hover {
   color: #00e5f5;
+
   transform: translateY(-1px);
 }
 
@@ -666,9 +704,9 @@ button {
   color: #00e5f5;
 }
 
-/* =========================================
+/* =====================================================
    FOOTER META
-========================================= */
+   ===================================================== */
 
 .footer-meta {
   position: absolute;
@@ -678,18 +716,22 @@ button {
   bottom: 11px;
 
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
   color: rgba(153, 158, 181, 0.45);
 
   font-family: "Space Mono", monospace;
-  font-size: 8px;
+
+  font-size: 14px;
 }
 
 .server-status {
   display: flex;
+
   align-items: center;
+
   gap: 8px;
 }
 
@@ -702,17 +744,18 @@ button {
   border-radius: 50%;
 
   background: #00d99a;
-  box-shadow: 0 0 7px rgba(0, 217, 154, 0.5);
-}
 
+  box-shadow:
+          0 0 7px rgba(0, 217, 154, 0.5);
+}
 
 /* =====================================================
    CONTACT POPUP
-   50% LARGER VERSION
-===================================================== */
+   ===================================================== */
 
 .contact-overlay {
   position: fixed;
+
   z-index: 99999;
 
   inset: 0;
@@ -721,6 +764,7 @@ button {
   height: 100vh;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -729,9 +773,13 @@ button {
   background: rgba(2, 3, 10, 0.68);
 
   backdrop-filter: blur(10px);
+
   -webkit-backdrop-filter: blur(10px);
 
-  animation: contactOverlayIn 180ms ease-out;
+  animation:
+          contactOverlayIn
+          180ms
+          ease-out;
 }
 
 @keyframes contactOverlayIn {
@@ -744,17 +792,13 @@ button {
   }
 }
 
-
-/* =====================================================
-   POPUP WINDOW
-===================================================== */
-
 .contact-popup {
   position: relative;
 
   z-index: 100000;
 
   width: 645px;
+
   max-width: calc(100vw - 60px);
 
   padding: 57px 57px 51px;
@@ -792,25 +836,29 @@ button {
 
   text-align: center;
 
-  animation: contactPopupIn 220ms ease-out;
+  animation:
+          contactPopupIn
+          220ms
+          ease-out;
 }
 
 @keyframes contactPopupIn {
   from {
     opacity: 0;
-    transform: scale(0.94) translateY(18px);
+
+    transform:
+            scale(0.94)
+            translateY(18px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+
+    transform:
+            scale(1)
+            translateY(0);
   }
 }
-
-
-/* =====================================================
-   POPUP INTERNAL GRID
-===================================================== */
 
 .contact-popup::after {
   content: "";
@@ -837,11 +885,6 @@ button {
   background-size: 105px 82px;
 }
 
-
-/* =====================================================
-   POPUP CORNER DETAILS
-===================================================== */
-
 .contact-popup::before {
   content: "";
 
@@ -859,9 +902,6 @@ button {
   border-left: 3px solid #9b5cff;
 }
 
-
-/* Bottom-right corner */
-
 .popup-email-button::after {
   content: "";
 
@@ -877,18 +917,11 @@ button {
   border-bottom: 3px solid #00e7f4;
 }
 
-
-/* Keep popup contents above the grid */
-
 .contact-popup > * {
   position: relative;
+
   z-index: 2;
 }
-
-
-/* =====================================================
-   CLOSE BUTTON
-===================================================== */
 
 .popup-close {
   position: absolute !important;
@@ -906,12 +939,13 @@ button {
   border: 0 !important;
 
   background: transparent !important;
-  background-color: transparent !important;
 
   color: rgba(190, 194, 210, 0.55) !important;
 
   font-family: Arial, sans-serif !important;
+
   font-size: 33px !important;
+
   font-weight: 300 !important;
 
   cursor: pointer;
@@ -921,11 +955,6 @@ button {
   color: #ffffff !important;
 }
 
-
-/* =====================================================
-   POPUP SYMBOL
-===================================================== */
-
 .popup-symbol {
   width: 89px;
   height: 89px;
@@ -933,6 +962,7 @@ button {
   margin: 0 auto 38px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -950,6 +980,7 @@ button {
   height: 45px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -966,21 +997,18 @@ button {
           0 0 14px rgba(255, 255, 255, 0.6);
 }
 
-
-/* =====================================================
-   POPUP TEXT
-===================================================== */
-
 .popup-eyebrow {
   margin: 0 0 20px;
 
   color: #00ddf6;
 
   font-family: "Space Mono", monospace;
+
   font-size: 13.5px;
   font-weight: 700;
 
   letter-spacing: 0.38em;
+
   text-transform: uppercase;
 }
 
@@ -990,7 +1018,9 @@ button {
   color: #f7f5fb;
 
   font-family: "Inter", sans-serif;
+
   font-size: 40px;
+
   font-weight: 900;
 
   line-height: 1;
@@ -1006,21 +1036,18 @@ button {
   color: rgba(186, 188, 204, 0.65);
 
   font-family: "Space Mono", monospace;
+
   font-size: 13.5px;
 
   line-height: 1.8;
 }
-
-
-/* =====================================================
-   EMAIL BOX
-===================================================== */
 
 .email-copy {
   width: 100%;
   height: 66px;
 
   display: flex;
+
   align-items: center;
 
   border: 1px solid rgba(150, 157, 185, 0.32);
@@ -1042,6 +1069,7 @@ button {
   color: #d9d7e5;
 
   font-family: "Space Mono", monospace;
+
   font-size: 13.5px;
 
   white-space: nowrap;
@@ -1060,12 +1088,13 @@ button {
   border: 0;
 
   background: #8c54ed !important;
-  background-color: #8c54ed !important;
 
   color: #ffffff;
 
   font-family: "Space Mono", monospace;
+
   font-size: 13.5px;
+
   font-weight: 700;
 
   cursor: pointer;
@@ -1082,11 +1111,6 @@ button {
           0 0 27px rgba(137, 77, 255, 0.30);
 }
 
-
-/* =====================================================
-   OPEN EMAIL BUTTON
-===================================================== */
-
 .popup-email-button {
   position: relative;
 
@@ -1096,8 +1120,10 @@ button {
   margin-top: 18px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   gap: 15px;
 
   border: 1px solid #00e7f4;
@@ -1109,7 +1135,9 @@ button {
   text-decoration: none;
 
   font-family: "Space Mono", monospace;
+
   font-size: 13.5px;
+
   font-weight: 700;
 
   transition:
@@ -1120,6 +1148,7 @@ button {
 
 .popup-email-button span {
   font-size: 29px;
+
   line-height: 0;
 }
 
@@ -1132,131 +1161,208 @@ button {
           0 0 30px rgba(0, 224, 245, 0.15);
 }
 
+/* =====================================================
+   CONSOLE INTRO
+   ===================================================== */
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+.console-intro {
+  position: fixed;
 
-@media (max-width: 900px) {
-  .side-rail {
-    display: none;
+  inset: 0;
+
+  z-index: 999999;
+
+  overflow: hidden;
+
+  background: #050609;
+
+  font-family: "Space Mono", monospace;
+}
+
+/*
+ * This is the actual black console surface.
+ *
+ * It exists only while the console is running.
+ */
+
+.console-screen {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #050609;
+
+  color: var(--accent);
+}
+
+.console-content {
+  width: min(
+          900px,
+          calc(100vw - 60px)
+  );
+
+  max-height: 80vh;
+
+  overflow: hidden;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.console-line {
+  margin: 0 0 6px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.025em;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+
+  animation:
+          consoleLineIn
+          100ms
+          ease-out
+          both;
+}
+
+.console-current {
+  margin-bottom: 6px;
+}
+
+.console-cursor {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  animation:
+          consoleCursorBlink
+          0.65s
+          steps(1)
+          infinite;
+}
+
+@keyframes consoleLineIn {
+  from {
+    opacity: 0;
   }
 
-  .grid {
-    background-size: 150px 100px;
-  }
-
-  .hero h1 {
-    font-size: clamp(43px, 9vw, 65px);
-  }
-
-  .social-nav {
-    gap: 22px;
-  }
-
-  .social-link {
-    font-size: 12px;
-  }
-
-  .footer-meta {
-    left: 20px;
-    right: 20px;
+  to {
+    opacity: 1;
   }
 }
 
+@keyframes consoleCursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =====================================================
+   DITHER REVEAL
+   ===================================================== */
+
+/*
+ * IMPORTANT:
+ *
+ * The splash page is already underneath this overlay.
+ *
+ * These cells are simply BLACK squares.
+ *
+ * When a cell is removed, the splash page underneath
+ * becomes visible.
+ */
+
+.dither-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999998;
+
+  display: grid;
+
+  grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(18, 1fr);
+
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+
+  background: transparent;
+}
+
+/*
+ * Every cell starts BLACK.
+ */
+
+.dither-cell {
+  width: 100%;
+  height: 100%;
+
+  background: #050609;
+
+  opacity: 1;
+}
+
+/*
+ * This class is applied individually to each cell.
+ *
+ * The cell disappears completely.
+ *
+ * There is NO mask.
+ * There is NO clip-path.
+ * There are NO CSS variables.
+ */
+
+.dither-cell-removed {
+  opacity: 0;
+
+  transition:
+          opacity 20ms linear;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
 @media (max-width: 600px) {
-  .portfolio {
-    min-height: 600px;
+  .console-content {
+    width: calc(100vw - 30px);
   }
 
-  .preview-info,
-  .build-info {
-    display: none;
-  }
-
-  .system-status {
-    top: 25px;
-  }
-
-  .hero {
-    top: 48%;
-  }
-
-  .hero-symbol {
-    margin-bottom: 28px;
-  }
-
-  .eyebrow {
+  .console-line {
     font-size: 8px;
-    letter-spacing: 0.27em;
-    margin-bottom: 17px;
+
+    margin-bottom: 5px;
   }
 
-  .hero h1 {
-    font-size: 12vw;
-  }
-
-  .skills {
-    max-width: 90vw;
-    margin: 18px 0 30px;
-    line-height: 2;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .btn {
-    width: 230px;
-  }
-
-  .bottom-section {
-    height: 110px;
-  }
-
-  .social-nav {
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px 20px;
-    padding: 0 15px;
-  }
-
-  .social-link {
-    font-size: 10px;
-  }
-
-  .footer-meta {
-    font-size: 6px;
-  }
-
-  .footer-meta > span:first-child {
-    max-width: 180px;
-  }
-
-  /* Mobile popup sizing */
-
-  .contact-overlay {
-    padding: 15px;
-  }
-
-  .contact-popup {
-    width: 350px;
-    max-width: calc(100vw - 30px);
-
-    padding: 30px 24px 25px;
-  }
-
-  .contact-popup h2 {
-    font-size: 22px;
-  }
-
-  .popup-description {
+  .console-cursor {
     font-size: 8px;
   }
 
-  .email-copy span {
-    font-size: 7px;
+  .dither-overlay {
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(30, 1fr);
   }
 }
